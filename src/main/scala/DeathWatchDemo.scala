@@ -22,6 +22,8 @@ object DeathWatchDemo extends App {
   }
 
   val system = ActorSystem("DeathWatchDemoSystem")
-  val master = system.actorOf(Props[Master], name = "master")
+  system.actorOf(Props[Master], name = "master")
+  
+  val master = system.actorFor("/user/master")
   master ! "start"
 }
