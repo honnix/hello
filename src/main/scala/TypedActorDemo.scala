@@ -4,7 +4,7 @@ import akka.dispatch.Await
 import akka.util.duration._
 
 object TypedActorDemo extends App {
-  val system = ActorSystem("TypedActorSystem")
+  val system = ActorSystem("TypedActorDemoSystem")
   val mySquarer: Squarer =
     TypedActor(system).typedActorOf(TypedProps[SquarerImpl]())
 

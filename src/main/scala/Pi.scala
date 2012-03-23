@@ -17,6 +17,10 @@ object Pi extends App {
       }
     }
 
+    override def preStart() = {
+      println(Thread.currentThread.getName)
+    }
+
     def receive = {
       case Work(start, nrOfElements) =>
         sender ! Result(calculatePiFor(start, nrOfElements))
